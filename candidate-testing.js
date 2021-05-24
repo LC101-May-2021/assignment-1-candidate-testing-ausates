@@ -34,9 +34,9 @@ function askQuestion() {
   // an "incorrect answer".
   if (spaceInAnswer === true) {
     words = candidateAnswer.split(" ");
-    firstName = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
-    lastName = words[1].charAt(0).toUpperCase() + words[1].slice(1).toLowerCase();
-    candidateAnswer = firstName + " " + lastName;
+    firstAnswer = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
+    lastAnswer = words[1].charAt(0).toUpperCase() + words[1].slice(1).toLowerCase();
+    candidateAnswer = firstAnswer + " " + lastAnswer;
   }
   correctAnswer = "Sally Ride";
 }
@@ -63,7 +63,20 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Howdy, " + candidateName.charAt(0).toUpperCase() + candidateName.slice(1).toLowerCase() + ", let's do a quiz.")
+  if (candidateName.indexOf(' ') >= 0) {
+    spaceInName = true;
+  }
+  // this part capitalizes the first letter of each word
+  // it also lower cases the rest of each word
+  // this is to ensure improper capitalization doesn't cause
+  // an "incorrect answer".
+  if (spaceInName === true) {
+    words = candidateName.split(" ");
+    firstName = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
+    lastName = words[1].charAt(0).toUpperCase() + words[1].slice(1).toLowerCase();
+    candidateName = firstName + " " + lastName;
+  }
+  console.log("Howdy, " + candidateName + ", let's do a quiz.")
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }

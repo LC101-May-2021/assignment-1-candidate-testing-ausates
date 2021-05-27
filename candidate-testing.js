@@ -32,7 +32,6 @@ function askQuestion() {
   } else if (candidateAnswer !== correctAnswer) {
     console.log("Sad day... you were... wRoNg.");
   };
-  console.log(candidateAnswers)
 
     // // this part tests for spaces in the answer
     // spaceInAnswer = false;

@@ -61,8 +61,9 @@ function gradeQuiz(candidateAnswers) {
       grade++;
     }
   }
+  grade = grade*20;
 
-  console.log(`Your grade is ${grade} out of 5.`);
+  console.log(`Your grade is ${grade}%.`);
 
   return grade;
 }

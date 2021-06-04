@@ -27,6 +27,7 @@ function askQuestion() {
     candidateAnswer = question;
     // candidateAnswer = candidateAnswer.toLowerCase();
     let spaceInAnswer = false;
+    candidateAnswer = candidateAnswer.toLowerCase()
     if (candidateAnswer.indexOf(' ') >= 0) {
       spaceInAnswer = true;
     }
@@ -35,6 +36,10 @@ function askQuestion() {
       firstAnswer = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
       lastAnswer = words[1].charAt(0).toUpperCase() + words[1].slice(1).toLowerCase();
       candidateAnswer = firstAnswer + " " + lastAnswer;
+    }
+
+    if (candidateAnswer === 'trajectory'){
+      candidateAnswer = 'Trajectory';
     }
     candidateAnswers.push(candidateAnswer)
     correctAnswer = correctAnswers[i];

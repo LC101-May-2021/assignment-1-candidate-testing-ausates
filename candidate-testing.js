@@ -42,7 +42,7 @@ function askQuestion() {
       candidateAnswer = 'Trajectory';
     }
     candidateAnswers.push(candidateAnswer)
-    correctAnswer = correctAnswers[i];
+    // correctAnswer = correctAnswers[i];
     
   }
 }

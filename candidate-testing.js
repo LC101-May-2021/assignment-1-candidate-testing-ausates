@@ -24,7 +24,7 @@ function askQuestion() {
   for (i=0; i < questions.length; i++) {
     question = input.question(`${questions[i]}`);
     candidateAnswer = question;
-    // candidateAnswer = candidateAnswer.toLowerCase();
+    candidateAnswer = candidateAnswer.toLowerCase();
     candidateAnswers.push(candidateAnswer)
     correctAnswer = correctAnswers[i];
   //   if (candidateAnswer === correctAnswer) {

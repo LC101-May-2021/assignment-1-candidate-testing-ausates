@@ -21,12 +21,7 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-  for (i=0; i < questions.length; i++) {
-    question = input.question(`${questions[i]}`);
-    candidateAnswer = question;
-    candidateAnswer = candidateAnswer.toLowerCase();
-    candidateAnswers.push(candidateAnswer)
-    correctAnswer = correctAnswers[i];
+  
   //   if (candidateAnswer === correctAnswer) {
   //   console.log("Excellent, you are so right and so smart!");
   // } else if (candidateAnswer !== correctAnswer) {
@@ -34,20 +29,24 @@ function askQuestion() {
   // };
 
     // // this part tests for spaces in the answer
-    // spaceInAnswer = false;
-    // if (candidateAnswer.indexOf(' ') >= 0) {
-    //   spaceInAnswer = true;
-    // }
-    // I originally capitalized answers for comparison
-    // Now, I just lower case everything.
 
 
-    // if (spaceInAnswer === true) {
-    //   words = candidateAnswer.split(" ");
-    //   firstAnswer = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
-    //   lastAnswer = words[1].charAt(0).toUpperCase() + words[1].slice(1).toLowerCase();
-    //   candidateAnswer = firstAnswer + " " + lastAnswer;
-    // }
+  for (i=0; i < questions.length; i++) {
+    question = input.question(`${questions[i]}`);
+    candidateAnswer = question;
+    // candidateAnswer = candidateAnswer.toLowerCase();
+    let spaceInAnswer = false;
+    if (candidateAnswer.indexOf(' ') >= 0) {
+      spaceInAnswer = true;
+    }
+    if (spaceInAnswer === true) {
+      words = candidateAnswer.split(" ");
+      firstAnswer = words[0].charAt(0).toUpperCase() + words[0].slice(1).toLowerCase();
+      lastAnswer = words[1].charAt(0).toUpperCase() + words[1].slice(1).toLowerCase();
+      candidateAnswer = firstAnswer + " " + lastAnswer;
+    }
+    candidateAnswers.push(candidateAnswer)
+    correctAnswer = correctAnswers[i];
     
   }
 }

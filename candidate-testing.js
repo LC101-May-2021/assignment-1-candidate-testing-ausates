@@ -27,11 +27,11 @@ function askQuestion() {
     candidateAnswer = candidateAnswer.toLowerCase();
     candidateAnswers.push(candidateAnswer)
     correctAnswer = correctAnswers[i];
-    if (candidateAnswer === correctAnswer) {
-    console.log("Excellent, you are so right and so smart!");
-  } else if (candidateAnswer !== correctAnswer) {
-    console.log("Sad day... you were... wRoNg.");
-  };
+  //   if (candidateAnswer === correctAnswer) {
+  //   console.log("Excellent, you are so right and so smart!");
+  // } else if (candidateAnswer !== correctAnswer) {
+  //   console.log("Sad day... you were... wRoNg.");
+  // };
 
     // // this part tests for spaces in the answer
     // spaceInAnswer = false;
@@ -63,7 +63,20 @@ function gradeQuiz(candidateAnswers) {
   }
   grade = grade*20;
 
-  console.log(`Your grade is ${grade}%.`);
+  console.log(`Candidate Name: ${candidateName}`);
+  for (i=0; i<correctAnswers.length; i++){
+    console.log(`${i + 1}) ${questions[i]}`);
+    console.log(`Your Answer: ${candidateAnswers[i]}`);
+    console.log(`Correct Answer: ${correctAnswers[i]}`)
+  }
+
+  console.log(`>>> Overall grade: ${grade}%. <<<`);
+
+  if (grade >= 80){
+   console.log('>>> Status: PASSED <<<');
+  } else if (grade < 80) {
+    console.log('>>> status: FAILED <<<');
+  }
 
   return grade;
 }

@@ -38,9 +38,7 @@ function askQuestion() {
       candidateAnswer = firstAnswer + " " + lastAnswer;
     }
 
-    if (candidateAnswer === 'trajectory'){
-      candidateAnswer = 'Trajectory';
-    }
+  
     candidateAnswers.push(candidateAnswer)
     // correctAnswer = correctAnswers[i];
     
@@ -52,7 +50,7 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let grade = 0;
   for (let i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i] === correctAnswers[i]){
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLocaleLowerCase()){
       grade++;
     }
   }
